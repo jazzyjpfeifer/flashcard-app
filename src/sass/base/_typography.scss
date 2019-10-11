@@ -1,0 +1,37 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.7;
+    color: $color-grey-dark;
+    padding: 30px;
+}
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    backface-visibility: hidden;
+    &-main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 300;
+        letter-spacing: 2.5rem;
+        
+    }
+
+    &-sub {
+        display: block;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 1.50rem;
+
+    }
+
+    &-tertiary {
+        font-size: 1.6rem;
+        font-weight: 700;
+        text-transform: uppercase; }
+}
+
+

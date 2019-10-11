@@ -1,0 +1,28 @@
+.navbar {
+    position: relative;
+    z-index: 20;
+
+    &-icon {
+        position: absolute;
+        height: 5rem;
+        width: 5rem;
+        top: 4rem;
+        fill: $color-white;
+    }
+
+    &-icon-home {
+        left: 4rem;
+        &:hover {
+            animation: wiggle 2s;
+        }
+    }
+
+    &-icon-back {
+        right: 5rem;
+    }
+
+    &-icon-forward {
+        right: 1rem;
+    }
+}
+

@@ -1,0 +1,298 @@
+/*
+0 - 600px: phone
+600 - 900: Tablet portrait mode
+900 - 1200: Tablet lanscape
+1200 - 1800: Normal styles
+1800+ : Big desktop screens
+
+Breakpoints:
+- phone
+- tab-port
+- tab-land
+- desktop
+
+1em = 16px
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 40%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+
+body {
+  box-sizing: border-box; }
+
+.App {
+  backface-visibility: hidden; }
+
+.animated-fadeOut {
+  animation: fadeOut 1s; }
+
+.animated-flipCard {
+  animation: flipCard 1s both; }
+
+.animated-shake {
+  animation: shake 1s both; }
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(10deg); }
+  25% {
+    transform: rotate(-10deg); }
+  50% {
+    transform: rotate(20deg); }
+  75% {
+    transform: rotate(-5deg); }
+  100% {
+    transform: rotate(0deg); } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes flipCard {
+  from {
+    transform: perspective(400px); }
+  30% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
+    opacity: 1; }
+  to {
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    opacity: 0; } }
+
+@keyframes shake {
+  from,
+  to {
+    transform: translate3d(0, 0, 0); }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate3d(-10px, 0, 0); }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate3d(10px, 0, 0); } }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #616060;
+  padding: 30px; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+  backface-visibility: hidden; }
+  .heading-primary-main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 300;
+    letter-spacing: 2.5rem; }
+  .heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1.50rem; }
+  .heading-primary-tertiary {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase; }
+
+.flashcard {
+  position: relative;
+  background-image: linear-gradient(to right bottom, rgba(0, 63, 141, 0.9), rgba(242, 29, 75, 0.9));
+  height: 95vh; }
+  .flashcard-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .flashcard-card {
+    text-align: center;
+    height: 60rem;
+    width: 40rem;
+    border: solid 1px #fff;
+    border-radius: 30px;
+    padding: 1rem; }
+  .flashcard-equation {
+    display: inline-block;
+    margin: 4rem 4rem;
+    color: #fff;
+    font-size: 10rem;
+    font-weight: 600; }
+  .flashcard-input {
+    margin-top: 4rem; }
+
+.flashcard-list {
+  padding: 8rem;
+  background-image: linear-gradient(to right bottom, rgba(0, 63, 141, 0.9), rgba(242, 29, 75, 0.9));
+  background-size: cover;
+  background-position: top;
+  position: relative; }
+  .flashcard-list-text-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem; }
+  .flashcard-list-heading {
+    color: #fff;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    text-align: center; }
+
+.flashcard-small {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border: solid 10px #1D7CF2;
+  border-radius: 50px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  margin-top: 12rem;
+  height: 40rem;
+  font-size: 8rem;
+  transition: all .2s; }
+  .flashcard-small:hover {
+    transform: translateY(-18px);
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2); }
+  .flashcard-small-link {
+    text-decoration: none;
+    color: #1D7CF2;
+    font-weight: 900; }
+
+.btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all .2s;
+  position: relative; }
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+
+.btn-white {
+  background-color: #fff;
+  color: #616060;
+  padding: 1.5rem 4rem; }
+
+.navbar {
+  position: relative;
+  z-index: 20; }
+  .navbar-icon {
+    position: absolute;
+    height: 5rem;
+    width: 5rem;
+    top: 4rem;
+    fill: #fff; }
+  .navbar-icon-home {
+    left: 4rem; }
+    .navbar-icon-home:hover {
+      animation: wiggle 2s; }
+  .navbar-icon-back {
+    right: 5rem; }
+  .navbar-icon-forward {
+    right: 1rem; }
+
+input[type=text] {
+  font-size: 10rem;
+  font-weight: 600;
+  color: #616060;
+  border: 4px solid #b1b0b0;
+  border-radius: 10px;
+  height: 15rem;
+  transition: all 2s ease-in-out;
+  width: 80%;
+  text-align: center; }
+  input[type=text]:focus {
+    outline: none;
+    border-color: #f21d4b; }
+  input[type=text]:after {
+    opacity: 0; }
+
+input[type=submit] {
+  padding: 1rem 1rem;
+  background: #b1b0b0;
+  border: 0 none;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; }
+
+.Stopwatch {
+  position: absolute;
+  top: 100px;
+  font-size: 10rem;
+  font-weight: 100;
+  color: #fff; }
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(0, 63, 141, 0.9), rgba(242, 29, 75, 0.9));
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  z-index: 1; }
+  .header-text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }

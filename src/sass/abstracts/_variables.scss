@@ -1,0 +1,22 @@
+
+// COLORS
+$color-primary: #1D7CF2;
+$color-primary-light: #9fc8fa;
+$color-primary-dark: #003f8d;
+$secondary-color: #f21d4b;
+$terciary-color: #f26f1d;
+$color-grey-light:#b1b0b0;
+$color-grey-dark:#616060;
+$color-white: #fff;
+$color-black: #000;
+
+//BACKGROUND-COLOR
+$background-color: linear-gradient(to right bottom, rgba($color-primary-dark, .9), rgba($secondary-color, .9));
+
+// FONT SIZE
+$default-font-size: 1.6rem;
+
+// GRID
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-horizontal: 6rem;
