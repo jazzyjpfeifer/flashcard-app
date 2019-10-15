@@ -1,9 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 
 
-export function Navbar() {
+
+function Navbar(props) {
+
+    const backButton = () => {
+        props.history.goBack();
+    }
+
+    const forwardButton = () => {
+        props.history.goForward();
+    }
+
     return (
         <nav className='navbar'>
             <Link to='/' >
@@ -11,16 +22,20 @@ export function Navbar() {
                     <use xlinkHref='/img/sprite.svg#icon-home'></use>
                 </svg>
             </Link>
-            <Link>
-                <svg className='navbar-icon navbar-icon-back'>
+            <div>
+                <svg className='navbar-icon navbar-icon-back' onClick={backButton}>
                     <use xlinkHref='/img/sprite.svg#icon-chevron-left'></use>
                 </svg>
-            </Link>
+            </div>
             <Link>
-                <svg className='navbar-icon navbar-icon-forward'>
+                <svg className='navbar-icon navbar-icon-forward' onClick={forwardButton}>
                     <use xlinkHref='/img/sprite.svg#icon-chevron-right'></use>
                 </svg>
             </Link>
         </nav>
     );
 }
+
+export default withRouter(Navbar);
+
+

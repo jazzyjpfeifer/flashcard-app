@@ -222,8 +222,10 @@ body {
     .navbar-icon-home:hover {
       animation: wiggle 2s; }
   .navbar-icon-back {
+    cursor: pointer;
     right: 5rem; }
   .navbar-icon-forward {
+    cursor: pointer;
     right: 1rem; }
 
 input[type=text] {
