@@ -1,4 +1,10 @@
 .btn {
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+
     &:link,
     &:visited {
         text-transform: uppercase;
@@ -24,5 +30,19 @@
         color: $color-grey-dark;
         padding: 1.5rem 4rem;
     }
+
+    &-primary {
+        background-color: $color-primary;
+        color: $color-grey-dark;
+        padding: 1.5rem 4rem;
+    }
+
+    &-secondary {
+        background-color: $secondary-color;
+        color: $color-white;
+        padding: 1.5rem 4rem;
+    }
+
+
 
 }

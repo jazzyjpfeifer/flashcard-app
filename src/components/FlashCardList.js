@@ -15,17 +15,17 @@ export default function FlashCardList() {
             </div>
             <div className='row'>
                 {row_1.map((r) => (
-                    <FlashCardSmall number={r}/>
+                    <FlashCardSmall number={r} key={r}/>
                 ))}
             </div>
             <div className='row'>
                 {row_2.map((r) => (
-                    <FlashCardSmall number={r}/>
+                    <FlashCardSmall number={r} key={r}/>
                 ))}
             </div>
             <div className='row'>
                 {row_3.map((r) => (
-                    <FlashCardSmall number={r}/>
+                    <FlashCardSmall number={r} key={r}/>
                 ))}
             </div>
         </div>
