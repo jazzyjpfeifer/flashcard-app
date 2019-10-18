@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom'
 import FlashCardList from './components/FlashCardList';
 import FlashCard from './components/FlashCard';
@@ -6,13 +6,10 @@ import { Header } from './components/Header';
 import NoRoute from './components/NoRoute';
 import Navbar from './components/Navbar';
 
-
-
-
-function App() {
-  return (
+class App extends Component {
+  render() {
+    return (
     <div className="App">
-      <div>
         <Navbar />
         <Switch>
           <Route exact path='/' render={() => <Header/>}/>
@@ -23,8 +20,8 @@ function App() {
           </Route>
         </Switch>
     </div>
-  </div>
-  );
+    );
+  }
 }
 
 export default App;

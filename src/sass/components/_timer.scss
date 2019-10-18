@@ -1,0 +1,13 @@
+.timer {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 100;
+    font-size: 6rem;
+    color: $color-white;
+    z-index: 20;
+}
+
+
+

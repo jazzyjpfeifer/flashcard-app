@@ -1,3 +1,7 @@
+.animated-wobble {
+  animation: wobble 2s ease-in-out;
+}
+
 .animated-fadeOut {
   animation: fadeOut 1s;
 
@@ -41,6 +45,56 @@
   to {
     transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
     opacity: 0;
+  }
+}
+
+@keyframes wobble {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10% {
+    transform: translate3d(-20%, 0, 0) rotate3d(0, 0, 1, -2deg);
+  }
+
+  20% {
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+
+  30% {
+    transform: translate3d(-20%, 0, 0) rotate3d(0, 0, 1, -2deg);
+  }
+
+  40% {
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+
+  50% {
+    transform: translate3d(-20%, 0, 0) rotate3d(0, 0, 1, -2deg);
+  }
+
+  60% {
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+
+  70% {
+    transform: translate3d(-20%, 0, 0) rotate3d(0, 0, 1, -2deg);
+  }
+
+  80% {
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+
+  90% {
+    transform: translate3d(-20%, 0, 0) rotate3d(0, 0, 1, -2deg);
+  }
+
+  100% {
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
   }
 }
 

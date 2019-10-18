@@ -27,11 +27,11 @@ function Navbar(props) {
                     <use xlinkHref='/img/sprite.svg#icon-chevron-left'></use>
                 </svg>
             </div>
-            <Link>
+            <div>
                 <svg className='navbar-icon navbar-icon-forward' onClick={forwardButton}>
                     <use xlinkHref='/img/sprite.svg#icon-chevron-right'></use>
                 </svg>
-            </Link>
+            </div>
         </nav>
     );
 }
