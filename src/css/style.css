@@ -318,6 +318,10 @@ input[type=submit] {
     fill: #000; }
     .Popup-icon-stopwatch {
       margin-left: 2rem; }
+    .Popup-icon-close {
+      position: absolute;
+      right: 0;
+      cursor: pointer; }
   .Popup-content {
     position: absolute;
     top: 50%;
@@ -326,6 +330,7 @@ input[type=submit] {
     text-align: center;
     width: 75%;
     height: 60rem;
+    height: 50rem;
     background-color: #fff;
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
     border-radius: 3px; }
