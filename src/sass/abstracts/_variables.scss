@@ -1,17 +1,18 @@
 
 // COLORS
+$color-background-dark: #003f8d;
+$color-background-light: #9d9aac86;
 $color-primary: #1D7CF2;
-$color-primary-light: #9fc8fa;
+$color-primary-light: #7bace9;
 $color-primary-dark: #003f8d;
-$secondary-color: #f21d4b;
-$terciary-color: #f26f1d;
+$color-secondary: #f21d4b;
+$color-terciary: #f26f1d;
 $color-grey-light:#b1b0b0;
 $color-grey-dark:#616060;
 $color-white: #fff;
 $color-black: #000;
 
-//BACKGROUND-COLOR
-$background-color: linear-gradient(to right bottom, rgba($color-primary-dark, .9), rgba($secondary-color, .9));
+$background-color: linear-gradient(to right bottom, $color-background-dark, $color-primary, $color-background-light ); 
 
 // FONT SIZE
 $default-font-size: 1.6rem;

@@ -8,7 +8,7 @@
 }
 
 .animated-flipCard {
-  animation: flipCard 1s both;
+  animation: flipCard .8s both;
 }
 
 .animated-shake {
@@ -38,12 +38,13 @@
   }
 
   30% {
-    transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -2deg);
     opacity: 1;
   }
 
+
   to {
-    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 115deg);
     opacity: 0;
   }
 }

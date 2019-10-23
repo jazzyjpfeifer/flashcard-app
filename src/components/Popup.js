@@ -23,6 +23,7 @@ class Popup extends React.Component {
     render() {
         const total = this.props.numCorrect + this.props.numWrong;
         const percent = (this.props.numCorrect / total) * 100;
+        const percent_formatted = percent.toFixed(2);
         
 
         if(!this.props.showPopup || this.state.hide) {
@@ -46,10 +47,10 @@ class Popup extends React.Component {
                          : 
                             <p>Ooops, you missed {this.props.numWrong} out of {total}</p>
                         }
-                        <p>You received {percent}%</p>
+                        <p>You received {percent_formatted}%</p>
                     </div>
                     <div className='Popup-buttons'>
-                        <Link onClick={() => window.location.reload(false)} className='btn btn-secondary mr-sm'>Retry</Link>
+                        <Link to={''} onClick={() => window.location.reload(false)} className='btn btn-secondary mr-sm'>Retry</Link>
                         <Link to={'/numbers'} className='btn btn-secondary'>Back</Link>
                     </div>
                 </div>

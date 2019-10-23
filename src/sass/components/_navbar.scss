@@ -20,11 +20,19 @@
     &-icon-back {
         cursor: pointer;
         right: 5rem;
+        transition: all .2s ease-in-out;
+        &:hover {
+            transform: scale(1.2);
+        }
     }
 
     &-icon-forward {
         cursor: pointer;
         right: 1rem;
+        transition: all .2s ease-in-out;
+        &:hover {
+            transform: scale(1.2);
+        }
     }
 }
 

@@ -15,6 +15,7 @@ class FlashCard extends React.Component {
         this.generateNewProblem = this.generateNewProblem.bind(this);
         this.checkAnswer = this.checkAnswer.bind(this);
         this.shake = this.shake.bind(this);
+        this.flip = this.flip.bind(this);
         this.startTimer = this.startTimer.bind(this);
         this.countDown = this.countDown.bind(this);
         this.closePopup = this.closePopup.bind(this);
@@ -154,6 +155,14 @@ class FlashCard extends React.Component {
           }
       }
 
+      flip() {
+          if(this.state.isCorrect === true) {
+              return 'animated-flipCard';
+          } else {
+              return '';
+          }
+      }
+
     render() {
         return (  
             <div className='flashcard'>
@@ -173,10 +182,10 @@ class FlashCard extends React.Component {
                 null
                 }  
                 <div className='flashcard-container'>
-                    <div className={`flashcard-card ${this.shake()}`}>
+                    <div className={`flashcard-card ${this.shake()} ${this.flip()}`}>
                     { !(this.state.isCorrect) 
                         ?   //Wrong Answer Card
-                        <div>
+                        <div className='flashcard-content'>
                             <div className='flashcard-equation'>
                                 {this.state.numerator} x {this.state.denominator}
                             </div>
@@ -194,9 +203,11 @@ class FlashCard extends React.Component {
                             </div> 
                         </div>
                         : //Correct Answer Card
-                            <div className='flashcard-card animated-flipCard'>
+                            <div className='flashcard-content'>
                                 <div className ='flashcard-equation'>
-                                    {this.state.correctAnswer} 
+                                    <svg className='flashcard-icon-thumbs-up'>
+                                        <use xlinkHref='/img/sprite.svg#icon-thumbs-up'></use>
+                                    </svg>                                  
                                 </div>
                             </div>
                     }

@@ -14,17 +14,16 @@ class FlashCardList extends React.Component {
                         Select a number to start practicing
                     </h2>
                 </div>
-                <div className='flashcard-list-grid'>
-                    {row.map((r) => (
-                        <FlashCardSmall number={r} key={r}/>
-                    ))}
+                <div className='flashcard-list-grid-container'>
+                    <div className='flashcard-list-grid'>
+                        {row.map((r) => (
+                            <FlashCardSmall number={r} key={r}/>
+                        ))}
+                    </div>
                 </div>
             </div>
-
         )
     };
-   
-
 }
 
 export default FlashCardList;

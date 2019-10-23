@@ -1,8 +1,8 @@
 .flashcard {
     position: relative;
     background-image: $background-color;
-    height: 100vh;
-
+    height: 95vh;
+    overflow: none;
 
     &-container {
         position: absolute;
@@ -13,29 +13,35 @@
         justify-content: center;
     }
 
-
-
     &-card {
-        margin-top: 10rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
         text-align: center;
-        height: 60rem;
-        width: 40rem;
-        border: solid 1px $color-white;
+        height: 50rem;
+        width: 30rem;
+        border: solid 8px $color-secondary;
         border-radius: 30px;
         padding: 1rem;
+        background-color: $color-white;
 
     }
 
     &-equation {
         display: inline-block;
-        margin: 4rem 4rem;
-        color: $color-white;
-        font-size: 10rem;
+        color: $color-grey-dark;
+        font-size: 8rem;
         font-weight: 600;
+        margin-bottom: 5rem;
     }
 
     &-input {
-        margin-top: 4rem;
+        margin-top: 8rem;
+
+    }
+
+    &-icon-thumbs-up {
+        fill: $color-grey-dark;
     }
 
 }
