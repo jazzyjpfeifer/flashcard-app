@@ -1,5 +1,6 @@
 import React from 'react';
 import Popup from './Popup';
+import Timer from './Timer';
 
 const random = Math.floor(Math.random() * 12) + 1;
 
@@ -16,9 +17,8 @@ class FlashCard extends React.Component {
         this.checkAnswer = this.checkAnswer.bind(this);
         this.shake = this.shake.bind(this);
         this.flip = this.flip.bind(this);
-        this.startTimer = this.startTimer.bind(this);
-        this.countDown = this.countDown.bind(this);
         this.closePopup = this.closePopup.bind(this);
+        this.handleTimer = this.handleTimer.bind(this);
 
         this.state = {
             numerator: number1,
@@ -28,14 +28,12 @@ class FlashCard extends React.Component {
             isCorrect: '',
             numCorrect: 0,
             numWrong: 0,
-            clockStarted: '',
-            seconds: 60,
-            showPopup: false
+            timerOn: '',
+            showPopup: false,
+            inputType: 'text'
         }
 
-        this.timer = 0;
     }
-
 
     handleChange(event) {
         this.setState({answer: event.target.value});
@@ -47,10 +45,6 @@ class FlashCard extends React.Component {
     };
 
     checkAnswer() {
-        //Starting Clock after submitting
-        this.startTimer();
-
-        //Checking answer logic here with time delay to generate new problem
         const answer = Number(this.state.answer);
         if(answer === this.state.correctAnswer) {
             this.setState({ 
@@ -68,7 +62,8 @@ class FlashCard extends React.Component {
                     isCorrect: '',
                     answer: '',
                     numWrong: this.state.numWrong + 1,
-                    clockStarted: true
+                    timerOn: true,
+                    focus: false
                 })
             }, 1000)
         } 
@@ -83,68 +78,14 @@ class FlashCard extends React.Component {
             answer: '',
             isCorrect: '',
             numCorrect: this.state.numCorrect + 1,
-            clockStarted: true
+            timerOn: true
         })
     }
-
-    countDown() {
-        // Remove one second, set state so a re-render happens.
-        let seconds = this.state.seconds - 1;
-        this.setState({
-          time: this.secondsToTime(seconds),
-          seconds: seconds,
-        });
-        
-        // Check if we're at zero.
-        if (seconds === 0) { 
-          clearInterval(this.timer);
-          this.setState({
-            showPopup: true,
-            seconds: 60,
-            clockStarted: ''
-          });
-
-        }
-      }
-
-    secondsToTime(secs) {
-        let hours = Math.floor(secs / (60 * 60));
-        let divisor_for_minutes = secs % (60 * 60);
-        let minutes = Math.floor(divisor_for_minutes / 60);
-        let divisor_for_seconds = divisor_for_minutes % 60;
-        let seconds = Math.ceil(divisor_for_seconds);
-        let divisor_for_milliseconds = divisor_for_seconds % 60;
-        let milliseconds = Math.ceil(divisor_for_milliseconds);
-    
-        let obj = {
-          "h": hours,
-          "m": minutes,
-          "s": seconds,
-          "ms": milliseconds
-        };
-        return obj;
-      }
-      
-      startTimer() {
-          if (this.timer === 0 && this.state.seconds > 0) {
-              this.timer = setInterval(this.countDown, 1000);
-            }
-
-            this.setState({
-                time: {m: 1}
-            })
-    }
-
-      componentDidMount() {
-        let timeLeftVar = this.secondsToTime(this.state.seconds);
-        this.setState({ time: timeLeftVar });
-      }
 
       closePopup() {
         this.setState({
             showPopup: false
         });
-        this.timer = 0;
       }
 
       shake() {
@@ -161,7 +102,20 @@ class FlashCard extends React.Component {
           } else {
               return '';
           }
-      }
+      };
+      
+      // Update state from Timer Component
+      handleTimer = (timerOff) => {
+          this.setState({timerOn: timerOff})
+      };
+
+      handleShowPopUp = (show) => {
+          this.setState({showPopup: show})
+      };
+
+      handleInputType = (type) => {
+          this.setState({inputType: type})
+      };
 
     render() {
         return (  
@@ -172,12 +126,16 @@ class FlashCard extends React.Component {
                     numCorrect={this.state.numCorrect}
                     numWrong={this.state.numWrong}
                     name={this.state.numerator}
+                    show = {this.handleShowPopUp}
                 />
-                { (this.state.clockStarted)
+                { (this.state.timerOn)
                 ?
-                <div className='timer'>
-                     {this.state.seconds}
-                </div>
+                <Timer 
+                    timerOn={this.state.timerOn} 
+                    timerOff = {this.handleTimer} 
+                    show = {this.handleShowPopUp}
+                    type = {this.handleInputType}
+                />
                 :
                 null
                 }  
@@ -187,16 +145,18 @@ class FlashCard extends React.Component {
                         ?   //Wrong Answer Card
                         <div className='flashcard-content'>
                             <div className='flashcard-equation'>
-                                {this.state.numerator} x {this.state.denominator}
+                                <span className='flashcard-equation-number'>{this.state.numerator}</span>
+                                <span className='flashcard-equation-operator'>x</span>
+                                <span className='flashcard-equation-number'>{this.state.denominator}</span> 
                             </div>
                             <div className='flashcard-input'>
                                 <form noValidate autoComplete="off" onSubmit={this.handleSubmit}>
                                     <input
                                         id="answer"
                                         label="Answer"
-                                        type="text"
                                         value={this.state.answer}
-                                        autoFocus="autofocus"
+                                        autoFocus={true}
+                                        type={this.state.inputType}
                                         onChange={this.handleChange}
                                     />
                                 </form>
@@ -204,10 +164,16 @@ class FlashCard extends React.Component {
                         </div>
                         : //Correct Answer Card
                             <div className='flashcard-content'>
-                                <div className ='flashcard-equation'>
-                                    <svg className='flashcard-icon-thumbs-up'>
+                                <div className='flashcard-equation'>
+                                    <span className='flashcard-equation-number'>{this.state.numerator}</span>
+                                    <span className='flashcard-equation-operator'>x</span>
+                                    <span className='flashcard-equation-number'>{this.state.denominator}</span> 
+                                </div>
+                                <div className='flashcard-correct-answer'>
+                                    {this.state.correctAnswer}
+                                    <svg className='flashcard-correct-answer-icon'>
                                         <use xlinkHref='/img/sprite.svg#icon-thumbs-up'></use>
-                                    </svg>                                  
+                                    </svg>
                                 </div>
                             </div>
                     }
@@ -215,11 +181,7 @@ class FlashCard extends React.Component {
                 </div>
             </div>
         );
-        
-    }
-
-   
-
+    } 
 }
 
 export default FlashCard;

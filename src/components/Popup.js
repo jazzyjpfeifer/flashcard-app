@@ -4,13 +4,10 @@ import { Link } from 'react-router-dom';
 class Popup extends React.Component {
     constructor(props) {
         super(props);
-
         this.hide = this.hide.bind(this);
-
         this.state = {
             hide: this.props.showPopup
         }
-
     }
 
     hide(){
@@ -19,12 +16,10 @@ class Popup extends React.Component {
         })
     }
 
-
     render() {
         const total = this.props.numCorrect + this.props.numWrong;
         const percent = (this.props.numCorrect / total) * 100;
         const percent_formatted = percent.toFixed(2);
-        
 
         if(!this.props.showPopup || this.state.hide) {
             return null;
@@ -50,7 +45,7 @@ class Popup extends React.Component {
                         <p>You received {percent_formatted}%</p>
                     </div>
                     <div className='Popup-buttons'>
-                        <Link to={''} onClick={() => window.location.reload(false)} className='btn btn-secondary mr-sm'>Retry</Link>
+                        <Link to={`/numbers/${this.props.name}`} onClick={() => window.location.reload(false)} className='btn btn-secondary mr-sm'>Retry</Link>
                         <Link to={'/numbers'} className='btn btn-secondary'>Back</Link>
                     </div>
                 </div>

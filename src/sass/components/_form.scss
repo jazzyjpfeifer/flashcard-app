@@ -1,29 +1,19 @@
 input[type=text] {
-    font-size: 10rem;
+    font-size: 8rem;
     font-weight: 600;
     color: $color-grey-dark;
-    border:4px solid $color-grey-light; 
+    border:none;
+    background-color: lighten($color-grey-light, 25%);
     border-radius: 10px;
-    height: 15rem;
-    transition: all 1s;
+    height: 10rem;
+    transition: all 100ms;
     width: 80%;
     text-align: center;
     &:focus {
         outline: none;
-        border-color:$color-grey-dark; 
-
+        border: 1px solid $color-secondary; 
     }
     &:after {
         opacity: 0;
     }
-
-
-
 }    
-    input[type=submit] {
-        padding:1rem 1rem; 
-        background:$color-grey-dark; border:0 none;
-        cursor:pointer;
-        -webkit-border-radius: 5px;
-        border-radius: 5px;
-    }

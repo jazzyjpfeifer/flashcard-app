@@ -1,77 +1,81 @@
 import React, { Component } from 'react';
-import Second from './Second';
 
-class Timer extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { 
-            time: {}, 
-            seconds: 60,
-            started: true // this.props.clockStarted
-        };
-        this.timer = 0;
-        this.startTimer = this.startTimer.bind(this);
-        this.countDown = this.countDown.bind(this);
-      }
 
-          
-      secondsToTime(secs){
-        let hours = Math.floor(secs / (60 * 60));
-        let divisor_for_minutes = secs % (60 * 60);
-        let minutes = Math.floor(divisor_for_minutes / 60);
-        let divisor_for_seconds = divisor_for_minutes % 60;
-        let seconds = Math.ceil(divisor_for_seconds);
-    
-        let obj = {
-          "h": hours,
-          "m": minutes,
-          "s": seconds
-        };
-        return obj;
-      }
+class Timer extends Component {  
+  _isMounted = false;
 
-      componentDidMount() {
-        let timeLeftVar = this.secondsToTime(this.state.seconds);
-        this.setState({ time: timeLeftVar });
-      }
-    
-      startTimer() {
-        this.setState({
-            started: this.props.clockStarted
-        });
-            if (this.timer === 0 && this.state.seconds > 0) {
-                this.timer = setInterval(this.countDown, 1000);
-              }
-      }
-    
-      countDown() {
-        // Remove one second, set state so a re-render happens.
-        let seconds = this.state.seconds - 1;
-        this.setState({
-          time: this.secondsToTime(seconds),
-          seconds: seconds,
-        });
-        
-        // Check if we're at zero.
-        if (seconds === 0) { 
+  state = {
+      timerState: 0,
+      timerTime: 5000,
+      show: false
+    }
+
+    startTimer = () => {
+      this.setState({
+        timerOn: true,
+        timerTime: this.state.timerTime,
+        timerStart: this.state.timerTime
+      });
+      this.timer = setInterval(() => {
+        const newTime = this.state.timerTime - 10;
+        if (newTime >= 0) {
+          this.setState({
+            timerTime: newTime
+          });
+        } else {
           clearInterval(this.timer);
+          this.handleTimerOff();
+          this.handleShowPopup();
+          this.handleInputType();
+          this.setState({ timerOn: false, show: true, isMounted: false });
         }
+      }, 10);
+    };
+
+    resetTimer = () => {
+      if (this.state.timerOn === false) {
+        this.setState({
+          timerTime: this.state.timerStart
+        });
       }
+    };
 
-      beginCountdown() {
-        if(this.state.started) {
-          this.startTimer();
-        }
+    componentDidMount() {
+      this._isMounted = true;
+      if (this._isMounted) {
+        this.startTimer();
+      }
+    }
 
-      } 
+    componentWillUnmount() {
+      this._isMounted = false;
+    }
+
+    handleTimerOff = () => {
+      this.props.timerOff(false);
+    }
+
+    handleShowPopup = () => {
+      this.props.show(true);
+    }
+
+    handleInputType = () => {
+      this.props.type('hidden');
+    }
+
+
 
     render() {
+      const { timerTime } = this.state;
+      let millsecs = ("0" + (Math.floor((timerTime / 100) % 60) % 60)).slice(-2);
+      let seconds = ("0" + (Math.floor((timerTime / 1000) % 60) % 60)).slice(-2);
+      let minutes = ("0" + Math.floor((timerTime / 60000) % 60)).slice(-2);
+
         return (
             <div className='Timer'>
                 <div>
-                  <Second value={this.state.seconds}/>
+                {minutes} : {seconds} : {millsecs}
                 </div>
-                <button onClick={this.startTimer}>Start</button>
             </div>
         );
     }

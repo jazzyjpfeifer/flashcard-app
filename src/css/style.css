@@ -179,14 +179,36 @@ body {
     background-color: #fff; }
   .flashcard-equation {
     display: inline-block;
+    width: 15rem;
     color: #616060;
     font-size: 8rem;
     font-weight: 600;
-    margin-bottom: 5rem; }
+    border-bottom: 3px solid #b1b0b0; }
+    .flashcard-equation-number {
+      display: block;
+      text-align: right;
+      margin-left: 1rem; }
+    .flashcard-equation-operator {
+      float: left; }
   .flashcard-input {
-    margin-top: 8rem; }
-  .flashcard-icon-thumbs-up {
-    fill: #616060; }
+    margin-top: 3rem; }
+  .flashcard-correct-answer {
+    position: relative;
+    margin-bottom: 3rem;
+    font-size: 8rem;
+    font-weight: 600;
+    text-align: center; }
+    .flashcard-correct-answer-icon {
+      position: absolute;
+      margin-top: 8rem;
+      height: 5rem;
+      width: 5rem;
+      fill: #b1b0b0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: .5; }
 
 .flashcard-list {
   padding: 40px;
@@ -239,12 +261,6 @@ body {
     color: #1D7CF2;
     font-weight: 900; }
 
-/*
-    &:active {
-        transform: translateY(-1px);
-        box-shadow: 0 5px 10px rgba($color-black, .2);
-    }
-    */
 .btn {
   text-transform: uppercase;
   text-decoration: none;
@@ -306,28 +322,21 @@ body {
       transform: scale(1.2); }
 
 input[type=text] {
-  font-size: 10rem;
+  font-size: 8rem;
   font-weight: 600;
   color: #616060;
-  border: 4px solid #b1b0b0;
+  border: none;
+  background-color: #f0f0f0;
   border-radius: 10px;
-  height: 15rem;
-  transition: all 1s;
+  height: 10rem;
+  transition: all 100ms;
   width: 80%;
   text-align: center; }
   input[type=text]:focus {
     outline: none;
-    border-color: #616060; }
+    border: 1px solid #f21d4b; }
   input[type=text]:after {
     opacity: 0; }
-
-input[type=submit] {
-  padding: 1rem 1rem;
-  background: #616060;
-  border: 0 none;
-  cursor: pointer;
-  -webkit-border-radius: 5px;
-  border-radius: 5px; }
 
 .Popup {
   height: 100vh;
@@ -368,7 +377,7 @@ input[type=submit] {
     .Popup-content-text {
       padding: 6rem; }
 
-.timer {
+.Timer {
   position: absolute;
   top: 10%;
   left: 50%;

@@ -29,20 +29,44 @@
 
     &-equation {
         display: inline-block;
+        width: 15rem;
         color: $color-grey-dark;
         font-size: 8rem;
         font-weight: 600;
-        margin-bottom: 5rem;
+        border-bottom: 3px solid $color-grey-light;
+
+        &-number {
+            display: block;
+            text-align: right;
+            margin-left: 1rem;
+        }
+
+        &-operator {
+            float: left;
+        }
     }
 
     &-input {
-        margin-top: 8rem;
+        margin-top: 3rem;
 
     }
 
-    &-icon-thumbs-up {
-        fill: $color-grey-dark;
-    }
+    &-correct-answer {
+        position: relative;
+        margin-bottom: 3rem;
+        font-size: 8rem;
+        font-weight: 600;
+        text-align: center;  
+            &-icon {
+                position: absolute;
+                margin-top: 8rem;
+                height: 5rem;
+                width: 5rem;
+                fill: $color-grey-light;
+                @include absCenter;
+                opacity: .5;
+            }
+        }
 
 }
 
