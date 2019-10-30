@@ -6,7 +6,7 @@ class Timer extends Component {
 
   state = {
       timerState: 0,
-      timerTime: 5000,
+      timerTime: 60000,
       show: false
     }
 

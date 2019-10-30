@@ -16,24 +16,6 @@
 }
 
 
-// MEDIA QUERY MANAGER 
-
-/*
-0 - 600px: phone
-600 - 900: Tablet portrait mode
-900 - 1200: Tablet lanscape
-1200 - 1800: Normal styles
-1800+ : Big desktop screens
-
-Breakpoints:
-- phone
-- tab-port
-- tab-land
-- desktop
-
-1em = 16px
-*/
-
 @mixin respond($breakpoint) {
     @if $breakpoint == phone {
         @media (max-width: 37.5em) { @content };

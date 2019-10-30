@@ -171,9 +171,6 @@ class FlashCard extends React.Component {
                                 </div>
                                 <div className='flashcard-correct-answer'>
                                     {this.state.correctAnswer}
-                                    <svg className='flashcard-correct-answer-icon'>
-                                        <use xlinkHref='/img/sprite.svg#icon-thumbs-up'></use>
-                                    </svg>
                                 </div>
                             </div>
                     }

@@ -1,18 +1,3 @@
-/*
-0 - 600px: phone
-600 - 900: Tablet portrait mode
-900 - 1200: Tablet lanscape
-1200 - 1800: Normal styles
-1800+ : Big desktop screens
-
-Breakpoints:
-- phone
-- tab-port
-- tab-land
-- desktop
-
-1em = 16px
-*/
 *,
 *::after,
 *::before {
@@ -198,17 +183,6 @@ body {
     font-size: 8rem;
     font-weight: 600;
     text-align: center; }
-    .flashcard-correct-answer-icon {
-      position: absolute;
-      margin-top: 8rem;
-      height: 5rem;
-      width: 5rem;
-      fill: #b1b0b0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      opacity: .5; }
 
 .flashcard-list {
   padding: 40px;
@@ -400,29 +374,3 @@ input[type=text] {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center; }
-
-.row {
-  max-width: 114rem;
-  margin: 0 auto; }
-  .row:not(:last-child) {
-    margin-bottom: 8rem; }
-  .row::after {
-    content: "";
-    display: table;
-    clear: both; }
-  .row [class^="col-"] {
-    float: left; }
-    .row [class^="col-"]:not(:last-child) {
-      margin-right: 6rem; }
-  .row .col-1-of-2 {
-    width: calc((100% - 6rem) / 2); }
-  .row .col-1-of-3 {
-    width: calc((100% - 2 * 6rem) / 3); }
-  .row .col-2-of-3 {
-    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem); }
-  .row .col-1-of-4 {
-    width: calc((100% - 3 * 6rem) / 4); }
-  .row .col-2-of-4 {
-    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
-  .row .col-3-of-4 {
-    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
