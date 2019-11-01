@@ -64,8 +64,6 @@
         font-weight: 900;
     }
 
-
-    
     @include respond(phone) {
         height: 250px;
         width: 170px;

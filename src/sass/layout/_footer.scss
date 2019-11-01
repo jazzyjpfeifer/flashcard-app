@@ -1,6 +1,7 @@
 .footer {
     display: flex;
     font-size: 1.5rem;
+    height: 10vh;
     text-transform: uppercase;
     &-link {
         &:link,
@@ -8,7 +9,6 @@
             text-decoration: none;
             color: $color-primary;
         }
-
         &:hover,
         &:active {
             color: $color-secondary;

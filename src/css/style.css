@@ -111,7 +111,7 @@ body {
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 2rem;
   line-height: 1.7;
   color: #616060;
   padding: 30px; }
@@ -167,8 +167,8 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     text-align: center;
-    height: 50rem;
-    width: 30rem;
+    height: 45rem;
+    width: 28rem;
     border: solid 8px #f21d4b;
     border-radius: 30px;
     padding: 1rem;
@@ -296,7 +296,8 @@ body {
     padding: 1.5rem 4rem; }
     .btn-secondary:hover {
       color: #f21d4b;
-      background-color: #fff; }
+      background-color: #fff;
+      border: solid 1px #e4e3e3; }
   .btn-terciary {
     background-color: #f2c41d;
     color: #616060;
@@ -331,21 +332,20 @@ body {
       transform: scale(1.2); }
 
 input[type=text] {
+  font-family: inherit;
+  margin: 0 auto;
   font-size: 8rem;
   font-weight: 600;
   color: #616060;
   border: none;
   background-color: #f0f0f0;
   border-radius: 10px;
-  height: 10rem;
   transition: all 100ms;
   width: 80%;
   text-align: center; }
   input[type=text]:focus {
     outline: none;
     border: 1px solid #f21d4b; }
-  input[type=text]:after {
-    opacity: 0; }
 
 .Popup {
   height: 100vh;
@@ -378,7 +378,6 @@ input[type=text] {
     transform: translate(-50%, -50%);
     text-align: center;
     width: 75%;
-    height: 60rem;
     height: 50rem;
     background-color: #fff;
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
@@ -430,6 +429,7 @@ input[type=text] {
 .footer {
   display: flex;
   font-size: 1.5rem;
+  height: 10vh;
   text-transform: uppercase; }
   .footer-link:link, .footer-link:visited {
     text-decoration: none;

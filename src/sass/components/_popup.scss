@@ -16,16 +16,12 @@
     }
 
     &-icon {
-
         height: 4rem;
         width: 4rem;
         fill: $color-black;
-
         &-stopwatch {
             margin-left: 2rem;
-
         }
-
 
         &-close {
             position: absolute;
@@ -38,15 +34,10 @@
         @include absCenter;
         text-align: center;
         width: 75%;
-
-        height: 60rem;
-
         height: 50rem;
-
         background-color: $color-white;
         box-shadow: 0 2rem 4rem rgba($color-black, .2);
         border-radius: 3px;
-
         &-text {
             padding: 6rem;
         }

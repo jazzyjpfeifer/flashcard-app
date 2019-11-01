@@ -48,6 +48,7 @@
         &:hover {
             color: $color-secondary;
             background-color: $color-white;
+            border: solid 1px lighten($color-grey-light, 20%);
         }
     }
 

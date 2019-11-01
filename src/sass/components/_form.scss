@@ -1,11 +1,12 @@
 input[type=text] {
-    font-size: 8rem;
+    font-family:inherit;
+    margin: 0 auto;
+    font-size: $default-number-size;
     font-weight: 600;
     color: $color-grey-dark;
     border:none;
     background-color: lighten($color-grey-light, 25%);
     border-radius: 10px;
-    height: 10rem;
     transition: all 100ms;
     width: 80%;
     text-align: center;
@@ -13,7 +14,5 @@ input[type=text] {
         outline: none;
         border: 1px solid $color-secondary; 
     }
-    &:after {
-        opacity: 0;
-    }
+    
 }    
