@@ -23,7 +23,7 @@ class Popup extends React.Component {
         if(percent >= 90) {
             return (
                 <div>
-                    <p>Good Job!</p>
+                    <p>Good Job! You answered {this.props.numCorrect} out of {total} correctly.</p>
                     <svg className='Popup-icon'>
                         <use xlinkHref='/img/sprite.svg#icon-emoji-happy'></use>
                     </svg>
@@ -42,7 +42,7 @@ class Popup extends React.Component {
             )
         } else return (
             <div>
-                <p>Ooops, you answered {this.props.numCorrect} out of {total} correctly</p>
+                <p>Ooops, you answered {this.props.numCorrect} out of {total} correctly.</p>
                 <svg className='Popup-icon'>
                     <use xlinkHref='/img/sprite.svg#icon-emoji-sad'></use>
                 </svg>
