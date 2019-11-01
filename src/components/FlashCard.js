@@ -141,42 +141,37 @@ class FlashCard extends React.Component {
                 }  
                 <div className='flashcard-container'>
                     <div className={`flashcard-card ${this.shake()} ${this.flip()}`}>
-                    { !(this.state.isCorrect) 
-                        ?   //Wrong Answer Card
                         <div className='flashcard-content'>
                             <div className='flashcard-equation'>
                                 <span className='flashcard-equation-number'>{this.state.numerator}</span>
                                 <span className='flashcard-equation-operator'>x</span>
                                 <span className='flashcard-equation-number'>{this.state.denominator}</span> 
                             </div>
-                            <div className='flashcard-input'>
-                                <form noValidate autoComplete="off" onSubmit={this.handleSubmit}>
-                                    <input
-                                        id="answer"
-                                        label="Answer"
-                                        value={this.state.answer}
-                                        autoFocus={true}
-                                        type={this.state.inputType}
-                                        onChange={this.handleChange}
-                                    />
-                                </form>
-                            </div> 
-                        </div>
+                    { !(this.state.isCorrect) 
+                        ?   //Wrong Answer Card
+                        <div className='flashcard-input'>
+                            <form noValidate autoComplete="off" onSubmit={this.handleSubmit}>
+                                <input
+                                    id="answer"
+                                    label="Answer"
+                                    value={this.state.answer}
+                                    autoFocus={true}
+                                    type={this.state.inputType}
+                                    onChange={this.handleChange}
+                                />
+                            </form>
+                        </div> 
                         : //Correct Answer Card
-                            <div className='flashcard-content'>
-                                <div className='flashcard-equation'>
-                                    <span className='flashcard-equation-number'>{this.state.numerator}</span>
-                                    <span className='flashcard-equation-operator'>x</span>
-                                    <span className='flashcard-equation-number'>{this.state.denominator}</span> 
-                                </div>
-                                <div className='flashcard-correct-answer'>
-                                    {this.state.correctAnswer}
-                                </div>
-                            </div>
+                        <div className='flashcard-correct-answer'>
+                            <span>
+                                {this.state.correctAnswer}
+                            </span>                            
+                        </div>
                     }
                     </div>                
                 </div>
             </div>
+        </div>
         );
     } 
 }

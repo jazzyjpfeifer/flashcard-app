@@ -15,7 +15,7 @@ html {
       font-size: 50%; } }
   @media (max-width: 37.5em) {
     html {
-      font-size: 40%; } }
+      font-size: 33%; } }
   @media (min-width: 112.5em) {
     html {
       font-size: 75%; } }
@@ -126,15 +126,26 @@ body {
     font-size: 6rem;
     font-weight: 300;
     letter-spacing: 2.5rem; }
+  .heading-primary-text {
+    color: #f21d4b; }
   .heading-primary-sub {
+    margin-top: 3rem;
     display: block;
-    font-size: 20px;
+    font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: 1.50rem; }
   .heading-primary-tertiary {
     font-size: 1.6rem;
     font-weight: 700;
     text-transform: uppercase; }
+  .heading-primary-logo {
+    display: inline-block;
+    width: 40px;
+    height: 40px; }
+  .heading-primary-icon {
+    height: 5rem;
+    width: 5rem;
+    fill: #f2c41d; }
 
 .mr-sm {
   margin-right: 1rem; }
@@ -142,8 +153,8 @@ body {
 .flashcard {
   position: relative;
   background-image: linear-gradient(to right bottom, #003f8d, #1D7CF2, #9d9aac86);
-  height: 95vh;
-  overflow: none; }
+  height: 90vh;
+  overflow: hidden; }
   .flashcard-container {
     position: absolute;
     width: 100%;
@@ -176,13 +187,12 @@ body {
     .flashcard-equation-operator {
       float: left; }
   .flashcard-input {
-    margin-top: 3rem; }
+    margin-top: 2rem; }
   .flashcard-correct-answer {
-    position: relative;
-    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
     font-size: 8rem;
-    font-weight: 600;
-    text-align: center; }
+    font-weight: 600; }
 
 .flashcard-list {
   padding: 40px;
@@ -201,7 +211,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 1rem;
     text-align: center;
-    margin: 30px; }
+    margin: 10rem 0 5rem 0; }
   .flashcard-list-grid-container {
     max-width: 80%;
     margin: 0 auto; }
@@ -209,6 +219,7 @@ body {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
+    justify-items: center;
     column-gap: 3rem; }
 
 .flashcard-small {
@@ -222,6 +233,7 @@ body {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   margin-top: 40px;
   height: 350px;
+  width: 200px;
   font-size: 8rem;
   transition: all .2s; }
   .flashcard-small:hover {
@@ -234,6 +246,18 @@ body {
     text-decoration: none;
     color: #1D7CF2;
     font-weight: 900; }
+  @media (max-width: 37.5em) {
+    .flashcard-small {
+      height: 250px;
+      width: 170px; } }
+  @media (max-width: 56.25em) {
+    .flashcard-small {
+      height: 300px;
+      width: 200px; } }
+  @media (max-width: 75em) {
+    .flashcard-small {
+      height: 300px;
+      width: 200px; } }
 
 .btn {
   text-transform: uppercase;
@@ -246,7 +270,9 @@ body {
   .btn:link, .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 100px;
     transition: all .2s;
     position: relative; }
@@ -268,6 +294,15 @@ body {
     background-color: #f21d4b;
     color: #fff;
     padding: 1.5rem 4rem; }
+    .btn-secondary:hover {
+      color: #f21d4b;
+      background-color: #fff; }
+  .btn-terciary {
+    background-color: #f2c41d;
+    color: #616060;
+    padding: 1.5rem 4rem; }
+    .btn-terciary:hover {
+      background-color: #fff; }
 
 .navbar {
   position: relative;
@@ -350,6 +385,9 @@ input[type=text] {
     border-radius: 3px; }
     .Popup-content-text {
       padding: 6rem; }
+  .Popup-buttons {
+    display: flex;
+    justify-content: center; }
 
 .Timer {
   position: absolute;
@@ -357,12 +395,12 @@ input[type=text] {
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 100;
-  font-size: 6rem;
+  font-size: 5rem;
   color: #fff;
   z-index: 20; }
 
 .header {
-  height: 95vh;
+  height: 90vh;
   background-image: linear-gradient(to right bottom, #003f8d, #1D7CF2, #9d9aac86);
   background-size: cover;
   background-position: top;
@@ -374,3 +412,27 @@ input[type=text] {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center; }
+    @media (max-width: 37.5em) {
+      .header-text-box {
+        margin-top: 15rem; } }
+    @media (max-width: 56.25em) {
+      .header-text-box {
+        margin-top: 15rem; } }
+  .header-buttons {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem; }
+  .header-btn-icon {
+    height: 4rem;
+    width: 4rem;
+    fill: #f2c41d; }
+
+.footer {
+  display: flex;
+  font-size: 1.5rem;
+  text-transform: uppercase; }
+  .footer-link:link, .footer-link:visited {
+    text-decoration: none;
+    color: #1D7CF2; }
+  .footer-link:hover, .footer-link:active {
+    color: #f21d4b; }

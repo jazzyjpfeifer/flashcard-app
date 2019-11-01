@@ -8,11 +8,22 @@ export function Header() {
             </div>
             <div className='header-text-box'>
                 <h1 className='heading-primary'>
-                    <span className='heading-primary-main'>Flash Card</span>
-                    <span className='heading-primary-sub'>Let's start learning</span>
+                    <span className='heading-primary-main'>
+                        Power
+                    <span>
+                        <svg className='heading-primary-icon'> className=''
+                            <use xlinkHref='/img/sprite.svg#icon-flash'></use>
+                        </svg>
+                    </span> up Math Facts</span>
+                    <span className='heading-primary-sub'>a flash card app to help you practice math</span>
                 </h1>
-                <Link to='/numbers' className='btn btn-white'>Click to start</Link>
-
+                <div className='header-buttons'>
+                    <Link to='/numbers' className='btn btn-white btn-header'>Click to start
+                            <svg className='header-btn-icon'> className=''
+                                <use xlinkHref='/img/sprite.svg#icon-flash'></use>
+                            </svg>
+                    </Link>
+                </div>
             </div>
         </div>
     );

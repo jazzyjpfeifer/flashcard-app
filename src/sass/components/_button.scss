@@ -10,7 +10,9 @@
     &:visited {
         text-transform: uppercase;
         text-decoration: none;
-        display: inline-block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border-radius: 100px;
         transition: all .2s;
         position: relative;
@@ -42,7 +44,25 @@
         background-color: $color-secondary;
         color: $color-white;
         padding: 1.5rem 4rem;
+
+        &:hover {
+            color: $color-secondary;
+            background-color: $color-white;
+        }
     }
+
+    &-terciary {
+        background-color: $color-terciary;
+        color: $color-grey-dark;
+        padding: 1.5rem 4rem;
+
+        &:hover {
+            background-color: $color-white;
+        }
+    }
+
+
+
 
 
 

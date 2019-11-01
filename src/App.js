@@ -5,6 +5,7 @@ import FlashCard from './components/FlashCard';
 import { Header } from './components/Header';
 import NoRoute from './components/NoRoute';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
             <NoRoute />
           </Route>
         </Switch>
+      <Footer />
     </div>
     );
   }

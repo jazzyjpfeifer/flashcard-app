@@ -1,8 +1,8 @@
 .flashcard {
     position: relative;
     background-image: $background-color;
-    height: 95vh;
-    overflow: none;
+    height: 90vh;
+    overflow: hidden;
 
     &-container {
         position: absolute;
@@ -24,14 +24,13 @@
         border-radius: 30px;
         padding: 1rem;
         background-color: $color-white;
-
     }
 
     &-equation {
         display: inline-block;
         width: 15rem;
         color: $color-grey-dark;
-        font-size: 8rem;
+        font-size: $default-number-size;
         font-weight: 600;
         border-bottom: 3px solid $color-grey-light;
 
@@ -47,18 +46,15 @@
     }
 
     &-input {
-        margin-top: 3rem;
-
+        margin-top: 2rem;
     }
 
     &-correct-answer {
-        position: relative;
-        margin-bottom: 3rem;
-        font-size: 8rem;
+        display: flex;
+        justify-content: center;
+        font-size: $default-number-size;
         font-weight: 600;
-        text-align: center;  
         }
-
 }
 
 
