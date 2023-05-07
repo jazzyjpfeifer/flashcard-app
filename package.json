@@ -7,7 +7,7 @@
     "react-countdown-now": "^2.1.1",
     "react-dom": "^16.10.1",
     "react-router-dom": "^5.1.1",
-    "react-scripts": "3.1.2"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "compile:sass": "node-sass src/sass/main.scss src/css/style.css -w",
